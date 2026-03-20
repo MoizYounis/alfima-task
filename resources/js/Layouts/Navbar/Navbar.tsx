@@ -17,7 +17,7 @@ export function Navbar({ active }: NavbarProps) {
       <nav className="mx-auto max-w-6xl px-4">
         <div className="flex h-16 items-center justify-between gap-4">
           <div className="flex min-w-[160px] items-center gap-3">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/customer" className="flex items-center gap-2">
               <img
                 src="/alfima_logo.png"
                 alt="alfima"

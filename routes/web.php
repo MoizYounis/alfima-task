@@ -4,17 +4,18 @@ use App\Http\Controllers\Dashboard\SettingsController;
 use App\Http\Controllers\Dashboard\TrackingCodesController;
 use Illuminate\Support\Facades\Route;
 
-Route::inertia('/', 'Website/Home')->name('home');
+Route::redirect('/', '/customer');
+Route::inertia('/customer', 'Website/Home')->name('home');
 
-Route::inertia('/references', 'Website/References')->name('references');
-Route::inertia('/prices', 'Website/Prices')->name('prices');
-Route::inertia('/blog', 'Website/Blog')->name('blog');
-Route::inertia('/catalog', 'Website/Catalog')->name('catalog');
+Route::inertia('/customer/references', 'Website/References')->name('references');
+Route::inertia('/customer/prices', 'Website/Prices')->name('prices');
+Route::inertia('/customer/blog', 'Website/Blog')->name('blog');
+Route::inertia('/customer/catalog', 'Website/Catalog')->name('catalog');
 
-Route::inertia('/login', 'Website/Login')->name('login');
+Route::inertia('/customer/login', 'Website/Login')->name('login');
 
-Route::inertia('/imprint', 'Website/Imprint')->name('imprint');
-Route::inertia('/privacy-policy', 'Website/PrivacyPolicy')->name('privacy-policy');
+Route::inertia('/customer/imprint', 'Website/Imprint')->name('imprint');
+Route::inertia('/customer/privacy-policy', 'Website/PrivacyPolicy')->name('privacy-policy');
 
 Route::get('/dashboard/tracking-codes', [
     TrackingCodesController::class,

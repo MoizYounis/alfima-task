@@ -12,10 +12,10 @@ export const dashboardNavItems: DashboardNavItem[] = [
 ];
 
 export const websiteHeaderLinks: WebsiteNavItem[] = [
-  { key: "home", label: "Home", href: "/" },
-  { key: "references", label: "References", href: "/references" },
-  { key: "prices", label: "Prices", href: "/prices" },
-  { key: "blog", label: "Blog", href: "/blog" },
-  { key: "catalog", label: "Catalog", href: "/catalog" },
+  { key: "home", label: "Home", href: "/customer" },
+  { key: "references", label: "References", href: "/customer/references" },
+  { key: "prices", label: "Prices", href: "/customer/prices" },
+  { key: "blog", label: "Blog", href: "/customer/blog" },
+  { key: "catalog", label: "Catalog", href: "/customer/catalog" },
 ];
 

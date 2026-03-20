@@ -37,50 +37,6 @@ export function useTrackingCodes(serverTrackingCodes: TrackingCode[]) {
     setTrackingCodes(serverTrackingCodes);
   }, [serverTrackingCodes]);
 
-  useEffect(() => {
-    const previous = document.querySelectorAll(
-      'script[data-alfima-tracking-code="true"]',
-    );
-    previous.forEach((el) => el.remove());
-
-    trackingCodes.forEach((trackingCode) => {
-      if (!trackingCode.isActive) {
-        return;
-      }
-
-      if (!trackingCode.scriptCode.trim()) {
-        return;
-      }
-
-      const script = document.createElement("script");
-      script.setAttribute("data-alfima-tracking-code", "true");
-      script.setAttribute(
-        "data-alfima-tracking-code-id",
-        String(trackingCode.id),
-      );
-
-      if (trackingCode.isExternal) {
-        script.src = trackingCode.scriptCode;
-      } else {
-        script.text = trackingCode.scriptCode;
-      }
-
-      const placement = trackingCode.placement ?? "head";
-
-      if (placement === "head") {
-        document.head.appendChild(script);
-      } else if (placement === "body_start") {
-        if (document.body.firstChild) {
-          document.body.insertBefore(script, document.body.firstChild);
-        } else {
-          document.body.appendChild(script);
-        }
-      } else {
-        document.body.appendChild(script);
-      }
-    });
-  }, [trackingCodes]);
-
   const isEmpty = trackingCodes.length === 0;
 
   function openCreateTrackingModal() {

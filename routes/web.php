@@ -12,10 +12,7 @@ Route::inertia('/customer/prices', 'Website/Prices')->name('prices');
 Route::inertia('/customer/blog', 'Website/Blog')->name('blog');
 Route::inertia('/customer/catalog', 'Website/Catalog')->name('catalog');
 
-Route::inertia('/customer/login', 'Website/Login')->name('login');
-
-Route::inertia('/customer/imprint', 'Website/Imprint')->name('imprint');
-Route::inertia('/customer/privacy-policy', 'Website/PrivacyPolicy')->name('privacy-policy');
+Route::inertia('/dashboard', 'Dashboard/Dashboard')->name('dashboard');
 
 Route::get('/dashboard/tracking-codes', [
     TrackingCodesController::class,
@@ -41,11 +38,3 @@ Route::get('/dashboard/settings', [SettingsController::class, 'index'])
     ->name('dashboard.settings');
 Route::post('/dashboard/settings', [SettingsController::class, 'update'])
     ->name('dashboard.settings.update');
-
-Route::get('/flash-test/error', function () {
-    return redirect()->route('home')->with('error', 'Flash error test message');
-})->name('flash-test.error');
-
-Route::get('/flash-test/success', function () {
-    return redirect()->route('home')->with('success', 'Flash success test message');
-})->name('flash-test.success');

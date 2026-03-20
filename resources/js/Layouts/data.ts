@@ -2,6 +2,10 @@ import type { DashboardNavItem, WebsiteNavItem } from "./types";
 
 export const dashboardNavItems: DashboardNavItem[] = [
   {
+    title: "Dashboard",
+    link: "/dashboard",
+  },
+  {
     title: "Tracking Codes",
     link: "/dashboard/tracking-codes",
   },

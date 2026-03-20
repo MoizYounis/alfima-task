@@ -13,6 +13,25 @@ The implementation is complete for the agreed scope and includes:
 - `/customer/*` route scope for customer-facing pages
 - Root (`/`) redirect to `/customer`
 
+## Technical Stack
+
+- Laravel: `^13.0`
+- React: `^19.2.0`
+- TypeScript: `^5.7.2`
+- Inertia:
+  - `inertiajs/inertia-laravel ^2.0`
+  - `@inertiajs/react ^2.3.7`
+- Tailwind CSS: `^4.0.0`
+- shadcn/ui: `^4.0.8`
+- Lucide React icons: `^0.577.0`
+
+## Setup Requirements
+
+- PHP `8.3+`
+- Composer
+- Node.js (LTS recommended) + npm
+- SQLite database configured in `.env`
+
 ## What Was Implemented
 
 ### 1) Cookie Banner (Customer-Facing)
@@ -110,11 +129,9 @@ The implementation is complete for the agreed scope and includes:
   - `GET /customer/prices`
   - `GET /customer/blog`
   - `GET /customer/catalog`
-  - `GET /customer/login`
-  - `GET /customer/imprint`
-  - `GET /customer/privacy-policy`
   - `GET /` -> redirects to `/customer`
 - Dashboard:
+  - `GET /dashboard`
   - `GET /dashboard/tracking-codes`
   - `POST /dashboard/tracking-codes`
   - `POST /dashboard/tracking-codes/{trackingCode}`
